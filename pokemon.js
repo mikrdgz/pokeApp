@@ -55,7 +55,7 @@ getPokemonTwo(data["1"].name, data["1"].sprites.front_default, data["1"].stats["
  //functions to get data to DOM
 
  function getPokemonOne(name,img, attack){
-     pokemonOne.innerHTML = name.charAt(0).toUpperCase() + name.slice(1); 
+     pokemonOne.innerHTML = "<h2>" + name.charAt(0).toUpperCase() + name.slice(1) + "</h2>"; 
      imgOne.innerHTML = `<img src= ${img}>`
      attackStat1.innerHTML = `Attack power: ${attack}`
      
@@ -63,7 +63,7 @@ getPokemonTwo(data["1"].name, data["1"].sprites.front_default, data["1"].stats["
  }
 
  function getPokemonTwo(name,img, attack){
-    pokemonTwo.innerHTML = name.charAt(0).toUpperCase() + name.slice(1);
+    pokemonTwo.innerHTML = "<h2>" + name.charAt(0).toUpperCase() + name.slice(1) + "</h2>";
     imgTwo.innerHTML = `<img src= ${img}>`
     attackStat2.innerHTML = `Attack power: ${attack}`
 
