@@ -29,7 +29,6 @@ const pokemon = [
   "sandslash",
   "nidorina",
   "clefairy",
-  "ninetails",
   "jigglypuff",
   "oddish",
   "vileplume"
@@ -47,22 +46,26 @@ Promise.all([
  fetchReq('https://pokeapi.co/api/v2/pokemon/' + randomPoke1),
  fetchReq('https://pokeapi.co/api/v2/pokemon/' + randomPoke2)
  ]).then(data=>{
-getPokemonOne(data["0"].name, data["0"].sprites.front_default)
-getPokemonTwo(data["1"].name, data["1"].sprites.front_default)
+     console.log(data)
+getPokemonOne(data["0"].name, data["0"].sprites.front_default, data["0"].stats["4"].base_stat)
+getPokemonTwo(data["1"].name, data["1"].sprites.front_default, data["1"].stats["4"].base_stat)
 
 })
 
  //functions to get data to DOM
 
- function getPokemonOne(name,img){
+ function getPokemonOne(name,img, attack){
      pokemonOne.innerHTML = name.charAt(0).toUpperCase() + name.slice(1); 
      imgOne.innerHTML = `<img src= ${img}>`
+     attackStat1.innerHTML = `Attack power: ${attack}`
      
 
  }
 
- function getPokemonTwo(name,img){
+ function getPokemonTwo(name,img, attack){
     pokemonTwo.innerHTML = name.charAt(0).toUpperCase() + name.slice(1);
     imgTwo.innerHTML = `<img src= ${img}>`
+    attackStat2.innerHTML = `Attack power: ${attack}`
+
     
 }
