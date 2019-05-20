@@ -16,7 +16,24 @@ const pokemon = [
   "squirtle",
   "bulbasaur",
   "charizard",
-  "magikarp"
+  "magikarp",
+  "mew",
+  "mewtwo",
+  "articuno",
+  "blastoise",
+  "caterpie",
+  "metapod",
+  "pidgeot",
+  "rattata",
+  "arbok",
+  "sandslash",
+  "nidorina",
+  "clefairy",
+  "ninetails",
+  "jigglypuff",
+  "oddish",
+  "vileplume"
+
 ];
 
 // get two random pokemon
@@ -38,15 +55,14 @@ getPokemonTwo(data["1"].name, data["1"].sprites.front_default)
  //functions to get data to DOM
 
  function getPokemonOne(name,img){
-     pokemonOne.innerHTML = name;
+     pokemonOne.innerHTML = name.charAt(0).toUpperCase() + name.slice(1); 
      imgOne.innerHTML = `<img src= ${img}>`
      
 
  }
 
  function getPokemonTwo(name,img){
-    pokemonTwo.innerHTML = name;
+    pokemonTwo.innerHTML = name.charAt(0).toUpperCase() + name.slice(1);
     imgTwo.innerHTML = `<img src= ${img}>`
     
-
 }
