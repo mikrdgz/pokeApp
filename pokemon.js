@@ -46,7 +46,6 @@ Promise.all([
  fetchReq('https://pokeapi.co/api/v2/pokemon/' + randomPoke1),
  fetchReq('https://pokeapi.co/api/v2/pokemon/' + randomPoke2)
  ]).then(data=>{
-     console.log(data)
 getPokemonOne(data["0"].name, data["0"].sprites.front_default, data["0"].stats["4"].base_stat)
 getPokemonTwo(data["1"].name, data["1"].sprites.front_default, data["1"].stats["4"].base_stat)
 
@@ -58,9 +57,7 @@ getPokemonTwo(data["1"].name, data["1"].sprites.front_default, data["1"].stats["
      pokemonOne.innerHTML = "<h2>" + name.charAt(0).toUpperCase() + name.slice(1) + "</h2>"; 
      imgOne.innerHTML = `<img src= ${img}>`
      attackStat1.innerHTML = `Attack power: ${attack}`
-     
-
- }
+      }
 
  function getPokemonTwo(name,img, attack){
     pokemonTwo.innerHTML = "<h2>" + name.charAt(0).toUpperCase() + name.slice(1) + "</h2>";
@@ -69,3 +66,4 @@ getPokemonTwo(data["1"].name, data["1"].sprites.front_default, data["1"].stats["
 
     
 }
+
