@@ -57,13 +57,28 @@ getPokemonTwo(data["1"].name, data["1"].sprites.front_default, data["1"].stats["
      pokemonOne.innerHTML = "<h2>" + name.charAt(0).toUpperCase() + name.slice(1) + "</h2>"; 
      imgOne.innerHTML = `<img src= ${img}>`
      attackStat1.innerHTML = `Attack power: ${attack}`
-      }
-
+    
+     pokeBattle.push(attack);
+ }
+ 
  function getPokemonTwo(name,img, attack){
     pokemonTwo.innerHTML = "<h2>" + name.charAt(0).toUpperCase() + name.slice(1) + "</h2>";
     imgTwo.innerHTML = `<img src= ${img}>`
     attackStat2.innerHTML = `Attack power: ${attack}`
-
+    pokeBattle.push(attack);
     
 }
 
+    let pokeBattle = [];
+
+// battle pokemon
+
+
+function battle(){
+
+    if(pokeBattle[0] > pokeBattle[1]) {
+        document.getElementById("battle").innerHTML =  pokemonOne.innerHTML + " has won!"
+    } else {
+        document.getElementById("battle").innerHTML = pokemonTwo.innerHTML + " has won!"
+    } 
+}
